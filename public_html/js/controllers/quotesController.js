@@ -102,9 +102,20 @@ app.controller("quotesController", function($scope) {
     ];
     $scope.currentQuote = "There are plenty of ways to enter a pool. The stairs is not one of them.";
     $scope.randomQuote = function() {
+        var $newQuote = $scope.quotes[Math.floor(98 * Math.random() + 1)];
         var $quoteDiv = $("#quoteDiv");
+        var $tbut = $("#tbut");
+        $tbut.html("");
+        twttr.widgets.createShareButton(
+            'http://wordstoliveby.herobo.com/',
+            document.getElementById('tbut'),
+            {
+              text: $newQuote,
+              count: "none"
+            }
+          );
         $quoteDiv.hide();
-        $scope.currentQuote = $scope.quotes[Math.floor(98 * Math.random() + 1)];
+        $scope.currentQuote = $newQuote;
         $quoteDiv.fadeIn(1000);
     };
 });
