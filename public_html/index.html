@@ -6,7 +6,7 @@ GitHub documentation: https://github.com/pacificLiving/Words-to-Live-By
 
 This lightweight app allows the user to see a new advice quote at random by clicking the seagull icon above the main text.
 
-Languages and frameworks: JavaScript, jQuery, AngularJS, HTML, CSS, Google Font API.
+Languages and frameworks: JavaScript, jQuery, AngularJS, HTML, CSS, Twitter API, Google Font API.
 
 -Kyle Corbelli
 
@@ -35,6 +35,7 @@ Languages and frameworks: JavaScript, jQuery, AngularJS, HTML, CSS, Google Font 
                 <div id="seagull" ng-click="randomQuote()"></div>
             </div>
             <h3 id="quoteDiv"><q>{{ currentQuote }}</q></h3>
+            <span id="tbut"><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ currentQuote }}" data-count="none" data-url="http://wordstoliveby.herobo.com/">Tweet</a></span>
         </div>
         <footer ng-controller="copyrightController">
             Copyright &copy; {{ today | date : "yyyy" }} Park Lane Productions. All rights reserved. Developed in California by Kyle Corbelli.
@@ -42,6 +43,7 @@ Languages and frameworks: JavaScript, jQuery, AngularJS, HTML, CSS, Google Font 
     
         <!-- Scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" defer></script>
+        <script src="js/twitter.js" defer></script>
         <script type="text/javascript" src="js/quotes.js" defer></script>
 
         <!-- Controllers -->
