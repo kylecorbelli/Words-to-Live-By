@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!--
+
+GitHub documentation: https://github.com/pacificLiving/Words-to-Live-By
+
+This lightweight app allows the user to see a new advice quote at random by clicking the seagull icon above the main text.
+
+Languages and frameworks: JavaScript, jQuery, AngularJS, HTML, CSS, Google Font API.
+
+-Kyle Corbelli
+
+-->
+
+<html>
+    <head>
+        <title>Words to Live By</title>
+        <!-- Style Links -->
+        <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css' />
+        <link href="css/quotes.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="images/seagull.ico" />
+        
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js" ></script>
+    </head>
+    <body ng-app="quotesApp">
+        <div class="main" ng-controller="quotesController">
+            <div id="buffer">
+                <div id="seagull" ng-click="randomQuote()"></div>
+            </div>
+            <h3 id="quoteDiv"><q>{{ currentQuote }}</q></h3>
+        </div>
+        <footer ng-controller="copyrightController">
+            Copyright &copy; {{ today | date : "yyyy" }} Park Lane Productions. All rights reserved. Developed in California by Kyle Corbelli.
+        </footer>
+    
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" defer></script>
+        <script type="text/javascript" src="js/quotes.js" defer></script>
+
+        <!-- Controllers -->
+        <script src="js/controllers/quotesController.js" defer></script>
+        <script src="js/controllers/copyrightController.js" defer></script>
+    </body>
+</html>
